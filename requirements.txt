@@ -1,0 +1,12 @@
+# Machine Learning Libraries
+scikit-learn    # Classical machine learning library
+numpy           # Numerical operations
+pandas          # Data manipulation and analysis
+matplotlib       # Data visualization
+seaborn          # Statistical data visualization
+xgboost==1.7.6
+scipy            # Scientific computing library
+# Web Framework
+Flask            # Web framework
+openpyxl
+gunicorn

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<style>
+  .login{
+    background-color: #e2e3e9;
+    width: 450px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+h1 {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+}
+form {
+    padding-top: 40px;
+    padding-left: 10px
+    
+}
+form  { display: table; align-content: center;     }
+    p     { display: table-row;  }
+    
+  label { display: table-cell; }
+  input { display: table-cell; }
+button{padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 105%;}
+      
+</style>
+
+</head>
+
+<body>
+   
+ <div class="login">
+	<h1>Walmart Sales Prediction</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+     
+    	<p><label for="Store">Store :</label>
+        <input type="text" name="Store" id="Store"  required="required" /> eg: 1,2..etc max 45
+      </p><br>
+      <p><label for="CPI" >CPI :</label>  
+        <input type="text" name="CPI" id="CPI"  required="required" /> eg: 130,148..etc
+      </p><br>
+      <!--<p><label for="Temperature" >Temperature(F) :</label><input type="text" name="Temperature" id="Temperature"required="required" /> eg: -2,5,10,55,75..etc</p><br><br>-->
+     <p><label for="Unemployment" >Unemployment rate:</label><input type="text" name="Unemployment" id="Unemployment"  required="required" /> eg: 14,9,8,26..etc</p><br><br>
+     <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> 
+    </form> 
+      
+    
+    <br>
+   <br>
+   {{prediction_text}} 
+ </div>
+ 
+
+</body>
+</html>
